@@ -14,7 +14,7 @@ class DynamicArray {
 private:
     T* data;
     int size;
-
+    
 public:
     DynamicArray(): data(nullptr), size(0) {}
 
@@ -35,7 +35,7 @@ public:
     }
 
 
-
+    
     DynamicArray(const DynamicArray<T> & dynamicArray) {
         size = dynamicArray.size;
         data = new T[size];
@@ -43,48 +43,48 @@ public:
             data[i] = dynamicArray.data[i];
         }
     }
-
+    
     ~DynamicArray() {
         delete[] data;
     }
-
+    
     T Get(int index) {
         if (index < 0 || index >= size){
             throw out_of_range("");
         }
-
+        
         return data[index];
     }
-
+    
     T GetFirst(){
         if (size == 0){
             throw out_of_range("");
         }
-
+        
         return data[0];
     }
-
+    
     T GetLast(){
         if (size == 0){
             throw out_of_range("");
         }
-
+        
         return data[size - 1];
     }
 
     T* Get_data() const{
         return data;
     }
-
+    
     int GetSize() {
         return size;
     }
-
+    
     void Set(int index, T value){
         if (index < 0 || index > size){
             throw out_of_range("");
         }
-
+        
         data[index] = value;
     }
 
@@ -156,21 +156,23 @@ public:
 
         return result;
     }
-
+    
     DynamicArray& operator= (const DynamicArray & other){
         if (&other != this){
             size = other.size;
             delete[] data;
             data = new T[size];
-
+            
             for(int i = 0; i < size; i++){
                 data[i] = other.data[i];
             }
         }
-
+        
         return *this;
     }
 };
-
+    
 
 #endif /* DynamicArray_h */
+
+
