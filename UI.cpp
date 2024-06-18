@@ -51,24 +51,24 @@ void func() {
 
 void your_choice() {
     int choice_ui, type = 0, func_type;
-
+    
     BST<int> tree_int;
     BST<string> tree_string;
-
+    
     while(1) {
         displayUI();
-
+        
         choice_ui = input(0, 3);
-
+        
         if (choice_ui == 1) {
             type_of_data();
             type = input(1, 2);
-
+            
         } else if (choice_ui == 2) {
             func();
-
+            
             func_type = input(1, 11);
-
+            
             if (func_type == 1) {
                 if (type == 1) {
                     int elem;
@@ -89,50 +89,50 @@ void your_choice() {
                         cout << "Элемент не найден в дереве." << endl;
                     }
                 }
-
+                
             } else if (func_type == 2) {
                 if (type == 1) {
                     int elem;
                     cout << "Введите элемент для удаления:";
                     cin >> elem;
                     tree_int.remove(elem);
-
+                    
                 } else if (type == 2) {
                     string elem;
                     cout << "Введите элемент для удаления:";
                     cin >> elem;
                     tree_string.remove(elem);
                 }
-
+                
             } else if (func_type == 3) {
                 if (type == 1) {
                     tree_int.balanceTree();
                 } else if (type == 2) {
                     tree_string.balanceTree();
                 }
-
+                
             } else if (func_type == 4) { // Map
                 if (type == 1) {
                     tree_int.map(multiply_by_2, type);
-
+                    
                 } else if (type == 2) {
                     tree_string.map(plus_A, type);
                 }
-
+                
             } else if (func_type == 5) { // Where
                 if (type == 1) {
                     tree_int.where(is_onedigit, type);
                 } else if (type == 2) {
                     tree_string.where(is_polyndrome, type);
                 }
-
+                
             } else if (func_type == 6) { // Reduce
                 if (type == 1) {
                     cout << tree_int.reduce(sum);
                 } else if (type == 2) {
                     cout << tree_string.reduce(sum);
                 }
-
+                
             } else if (func_type == 7) { // Извлечение поддерева
                 if (type == 1) {
                     int data;
@@ -145,7 +145,7 @@ void your_choice() {
                     cin >> data;
                     tree_string.subtree(data);
                 }
-
+                
             } else if (func_type == 8) {
                 if (type == 1) {
                     BST<int> subroot;
@@ -158,7 +158,7 @@ void your_choice() {
                         cin >> elem;
                         subroot.add(elem);
                     }
-
+                    
                     cout << tree_int.is_subtree(subroot) << endl;
                 } else if (type == 2) {
                     BST<string> subroot;
@@ -171,32 +171,32 @@ void your_choice() {
                         cin >> elem;
                         subroot.add(elem);
                     }
-
+                    
                     cout << tree_string.is_subtree(subroot) << endl;
                 }
-
-
+                
+                
             } else if (func_type == 9) { // Очистка дерева
-
+                
                 if (type == 1) {
                     tree_int.clear_UI();
-
+                    
                 } else if (type == 2) {
                     tree_string.clear_UI();
-
+                    
                 }
-
-
+                
+                
             } else if (func_type == 10) { // Вывод дерева
-
+                
                 if (type == 1) {
                     tree_int.print_tree_branches();
-
+                    
                 } else if (type == 2) {
                     tree_string.print_tree_branches();
                 }
-
-
+                
+                
             } else if (func_type == 11) { // Добавление элемента
                 if (type == 1) {
                     int n;
@@ -208,7 +208,7 @@ void your_choice() {
                         cin >> elem;
                         tree_int.add(elem);
                     }
-
+                    
                 } else if (type == 2) {
                     int n;
                     cout << "Введите кол-во элементов";
@@ -221,9 +221,9 @@ void your_choice() {
                     }
                 }
             }
-
-
-
+            
+            
+            
         }  else if (choice_ui == 3) {
             testBST();
 
@@ -231,5 +231,6 @@ void your_choice() {
             break;
         }
     }
-
+    
 }
+
