@@ -1,49 +1,23 @@
 #ifndef functions_h
 #define functions_h
 
+#include "string.h"
 
-int multiply_by_2 (int data) {
-    return data * 2;
-}
+using namespace std;
 
-string plus_A (string data) {
-    return data + "A";
-}
+
+int multiply_by_2 (int data);
+
+string plus_A (string data);
 
 template <class T>
-T sum(T a, T b) {
-    return a + b;
-}
+T sum(T a, T b);
 
-bool is_onedigit(int a) {
-    return 0 <= a && a < 10;
-}
+bool is_onedigit(int a);
 
-bool is_polyndrome(string a) {
+bool is_polyndrome(string a);
 
-    for(int i = 0; i < a.length(); i++) {
-        if (a[i] != a[a.length() - i - 1]) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-
-
-
-int input(int min, int max) {
-    int answer;
-
-    cin >> answer;
-    while (answer < min || answer > max) {
-        cout << "Ошибка. Введите число от " << min << " до " << max << endl;
-        cin >> answer;
-    }
-
-    return answer;
-}
+int input(int min, int max);
 
 
 
